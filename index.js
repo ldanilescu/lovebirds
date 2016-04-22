@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 
-app.set('port', (process.env.PORT || 3000));
+var port = process.env.PORT || 3000;
 
 app.use(express.static(__dirname + '/lovebirds'));
 
@@ -13,8 +13,8 @@ app.get('/', function(request, response) {
   response.render('index');
 });
 
-app.listen(app.get('port'), function() {
-  console.log('LoveBirds app is running on port', app.get('port'));
+app.listen(port, function() {
+  console.log('LoveBirds app is running on port', port);
 });
 
 
